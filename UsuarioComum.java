@@ -29,7 +29,7 @@ public class UsuarioComum extends Usuario {
         // se achar -> soma 1 na quantidade e verifica multa 
 
         LocalDate dataDevolução = LocalDate.now();
-        istorico.devolucao.calcularAtraso(dataDevolução);
+        //historico.devolucao.verificaAtraso(dataDevolução);
         
     }
 
