@@ -24,13 +24,20 @@ public class UsuarioComum extends Usuario {
 
     }
     public void retornarLivro(Livro exemplar){
-        // procura o livro no historica de emprestimo
-        // se não achar o livro -> erro´
-        // se achar -> soma 1 na quantidade e verifica multa 
-
-        //LocalDate dataDevolução = LocalDate.now();
-        //historico.devolucao.verificaAtraso(dataDevolução);
-        
+        boolean livroEncontrado = false;
+        for (Emprestimo emprestimo : this.historico){
+            if (emprestimo.getLivroEmprestado().equals(exemplar)){
+                exemplar.setQuantidadeDisponivel(exemplar.quantidadeDisponivel + 1);
+                emprestimo.devolvido = true;
+                livroEncontrado = true;
+                
+                LocalDate dataDevolucao = LocalDate.now();
+                emprestimo.verificaAtraso(dataDevolucao);
+                break;
+            }        
+        }
+        if (!livroEncontrado)
+            System.out.println("LIvro não encontrado");
     }
 
 }

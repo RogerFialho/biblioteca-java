@@ -4,13 +4,14 @@ public class Emprestimo {
     private LocalDate dataInicial;
     private LocalDate dataFinal;
     public Livro livroEmprestado;
+    public boolean devolvido = false;
     
     public Emprestimo(LocalDate dataInicial, LocalDate dataFinal, Livro livroEmprestado){
         this.dataInicial = dataInicial;
         this.dataFinal = dataFinal;
         this.livroEmprestado = livroEmprestado;
     }
-
+    
     public LocalDate getDataFinal() {
         return dataFinal;
     }
