@@ -28,7 +28,7 @@ public class UsuarioComum extends Usuario {
         // se não achar o livro -> erro´
         // se achar -> soma 1 na quantidade e verifica multa 
 
-        LocalDate dataDevolução = LocalDate.now();
+        //LocalDate dataDevolução = LocalDate.now();
         //historico.devolucao.verificaAtraso(dataDevolução);
         
     }
