@@ -1,8 +1,15 @@
-public class LIvro {
-    private Strinng titulo;
+public class Livro {
+    private String titulo;
     private int id;
     private String autor;
     private int quantidadeDisponivel;
+
+    public Livro(String titulo, int id, String autor, int quantidadeDisponivel){
+        this.titulo = titulo;
+        this.id = id;
+        this.autor = autor;
+        this.quantidadeDisponivel = quantidadeDisponivel;
+    }
 
     public String getTitulo(){
         return this.titulo;
@@ -10,7 +17,7 @@ public class LIvro {
     public int getId(){
         return this.id;
     }
-    public int setQuantidadeDisponivel(int novaQuantidade){
+    public void setQuantidadeDisponivel(int novaQuantidade){
         this.quantidadeDisponivel = novaQuantidade;
     }
 }

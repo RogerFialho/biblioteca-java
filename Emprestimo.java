@@ -10,6 +10,5 @@ public class Emprestimo {
     }
 
     public int calcularAtraso(LocalDate dataRecebimento){
-        (dataRecebimento > dataFinal) ? return dataRecebimento - dataFinal : return 0;
     }
 }
