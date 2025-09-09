@@ -19,7 +19,7 @@ public class Usuario {
             do {
                 idtemp = scanner.nextInt();
             } while (idtemp <= 0); 
-            this.id = idtemp;
+            setId(idtemp);
             scanner.close();
         }
         if (this.nome == null){
@@ -29,7 +29,7 @@ public class Usuario {
             do {
                 nometemp = scanner.nextLine();
             } while (nometemp == null); 
-            this.nome = nometemp;
+            setNome(nometemp);
             scanner.close();
         }
         if (this.email == null){
@@ -39,7 +39,7 @@ public class Usuario {
             do {
                 emailtemp = scanner.nextLine();
             } while (emailtemp == null); 
-            this.email = emailtemp;
+            setEmail(emailtemp);
             scanner.close();
         }
         if (this.numero == null){
@@ -49,10 +49,9 @@ public class Usuario {
             do {
                 numerotemp = scanner.nextLine();
             } while (numerotemp == null); 
-            this.numero = numerotemp;
+            setNumero(numerotemp);
             scanner.close();
         }
-        
     }
 
     public String getNome() {
