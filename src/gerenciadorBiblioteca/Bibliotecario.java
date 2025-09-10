@@ -1,3 +1,4 @@
+package gerenciadorBiblioteca;
 import java.util.List;
 
 public class Bibliotecario extends Usuario{

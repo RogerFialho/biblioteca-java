@@ -1,3 +1,4 @@
+package gerenciadorBiblioteca;
 import java.util.Scanner;
 
 public class Usuario {
