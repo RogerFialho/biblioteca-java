@@ -43,6 +43,7 @@ public class Memoria {
         } catch (IOException e){
             e.printStackTrace();
         }
+        System.out.println("arquivo de usuarios salvo");
     }
 
     public static List<Usuario> carregaUsuarios(String nomearquivo){
@@ -59,7 +60,7 @@ public class Memoria {
 
                 if ("COMUM".equalsIgnoreCase(tipo)){
                     usuarios.add(new UsuarioComum(id, nome, email, numero));
-                } else if ("BIBLIOTECARIO".equals(tipo)){
+                } else if ("BIBLIOTECARIO".equalsIgnoreCase(tipo)){
                     usuarios.add(new Bibliotecario(id, nome, email, numero));
                 } else {
                     System.out.println("Usuario " + nome + "com tipo indefinido");
