@@ -1,4 +1,5 @@
 package gerenciadorBiblioteca;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -9,8 +10,8 @@ public class Main {
         List<Usuario> usuarios = new ArrayList<>();
         
         // Nomes dos arquivos CSV
-        String arquivoLivros = "acervo.csv";
-        String arquivoUsuarios = "usuarios.csv";
+        String arquivoLivros = "../data/acervo.csv";
+        String arquivoUsuarios = "../data/usuarios.csv";
 
         // Carrega os dados dos arquivos CSV para a memória
         acervo = Memoria.carregaLivros(arquivoLivros);
