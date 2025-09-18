@@ -1,15 +1,17 @@
 package gerenciadorBiblioteca;
 public class Livro {
-    public String titulo;
-    public int id;
-    public String autor;
-    public int quantidadeDisponivel;
+    private String titulo;
+    private int id;
+    private String autor;
+    private int quantidadeDisponivel;
+    private int quantidadeEmprestada;
 
-    public Livro(String titulo, int id, String autor, int quantidadeDisponivel){
+    public Livro(String titulo, int id, String autor, int quantidadeDisponivel, int quantidadeEmprestada){
         this.titulo = titulo;
         this.id = id;
         this.autor = autor;
         this.quantidadeDisponivel = quantidadeDisponivel;
+        this.quantidadeEmprestada = quantidadeEmprestada;
     }
 
     public String getTitulo(){
@@ -21,8 +23,11 @@ public class Livro {
     public String getAutor (){
         return this.autor;
     }
-    public int getQuantidade(){
+    public int getQuantidadeDisponivel(){
         return this.quantidadeDisponivel;
+    }
+    public int getQuantidadeEmprestada() {
+        return quantidadeEmprestada;
     }
     public void setTitulo(String titulo){
         this.titulo = titulo;
@@ -35,5 +40,8 @@ public class Livro {
     }
     public void setQuantidadeDisponivel(int novaQuantidade){
         this.quantidadeDisponivel = novaQuantidade;
+    }
+    public void setQuantidadeEmprestada(int quantidadeEmprestada) {
+        this.quantidadeEmprestada = quantidadeEmprestada;
     }
 }
