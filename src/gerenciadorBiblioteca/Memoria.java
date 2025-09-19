@@ -36,9 +36,9 @@ public class Memoria {
         return livros;
     }
     // salva os dados dos usuários no arquivo usuarios
-    public static void salvarUsuarios(String nomearquivo, List<Usuario> usuarios){
+    public static void salvarUsuarios(String nomearquivo, List<UsuarioComum> usuarios){
     try(BufferedWriter bw = new BufferedWriter(new FileWriter(nomearquivo))){
-        for (Usuario u : usuarios){
+        for (UsuarioComum u : usuarios){
             bw.write(u.getId() + "," + u.getNome() + "," + u.getEmail() + "," + u.getNumero());
             bw.newLine();
         }
@@ -48,8 +48,8 @@ public class Memoria {
     System.out.println("Arquivo de usuários salvo.");   
     }
 
-    public static List<Usuario> carregaUsuarios(String nomearquivo){
-    List<Usuario> usuarios = new ArrayList<>();
+    public static List<UsuarioComum> carregaUsuarios(String nomearquivo){
+    List<UsuarioComum> usuarios = new ArrayList<>();
     try (BufferedReader bf = new BufferedReader(new FileReader(nomearquivo))){
         String linha;
         while ((linha = bf.readLine()) != null ){

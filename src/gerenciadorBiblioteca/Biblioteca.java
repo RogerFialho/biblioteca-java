@@ -5,28 +5,48 @@ import java.util.List;
 
 public class Biblioteca{
     public List<Livro> acervo = new ArrayList<>();
-    public List<Usuario> usuarios = new ArrayList<>();
+    public List<UsuarioComum> usuarios = new ArrayList<>();
     
-    public Biblioteca(){
-
+    public Biblioteca(List<Livro> acervo, List<UsuarioComum> usuarios){
+        this.acervo = acervo;
+        this.usuarios = usuarios;
     }
     
-    public void adicionarLivro(Livro novoLivro, List<Livro> livros){
-        livros.add(novoLivro);
+    public void adicionarLivro(Livro novoLivro){
+        this.acervo.add(novoLivro);
         System.out.println("Novo livro adicionado: " + novoLivro.getTitulo());
     }
-    public void removerLivro(int idLivro, List<Livro> livros){
-        livros.removeIf(l-> l.getId() == idLivro);
+    public void removerLivro(int idLivro){
+        this.acervo.removeIf(l-> l.getId() == idLivro);
         System.out.println("livro removido do acervo: (id: " + idLivro + ")");
     }
-    public void adicionarUsuario(List<Usuario> usuarios, UsuarioComum novoUsuario){
-        usuarios.add(novoUsuario);
+    public void adicionarUsuario( UsuarioComum novoUsuario){
+        this.usuarios.add(novoUsuario);
         System.out.println("Novo usuario comum: " + novoUsuario.getNome());
 
     }
-    public void removerUsuario(List<Usuario> usuarios, int idUser){
-        usuarios.removeIf(l-> l.getId() == idUser);
+    public void removerUsuario( int idUser){
+        this.usuarios.removeIf(l-> l.getId() == idUser);
         System.out.println("usuario removido do sistema: (id: " + idUser + ")");
+    }
+
+    public void exibeLivrosDisponiveis(){
+        for (Livro l : acervo){
+            if (l.getQuantidadeDisponivel() > 0){
+                System.out.println(l.getTitulo() + " está disponível (" + l.getQuantidadeDisponivel() + " unidades).");
+            }
+        }
+    }
+
+    public void exibeLivrosEmprestados (){
+        for (UsuarioComum u : usuarios){
+            for (Emprestimo e : u.getHistorico()){
+                if (!e.getDevolvido()){
+                    System.out.println("Usuario " + u.getNome() + " está com o livro " + e.getLivroEmprestado().getTitulo());
+                }
+            }
+            
+        }
     }
 
     public void pegarLivro(UsuarioComum user, Livro exemplar){
