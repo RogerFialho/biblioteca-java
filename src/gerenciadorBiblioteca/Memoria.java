@@ -9,7 +9,7 @@ public class Memoria {
     public static void salvarLivros(String nomearquivo, List<Livro> livros){
         try (BufferedWriter bw  = new BufferedWriter(new FileWriter(nomearquivo))){
             for (Livro l : livros){
-                bw.write(l.getId() + "," + l.getTitulo() + "," + l.getAutor() + "," + l.getQuantidadeDisponivel() + "," + l.getQuantidadeEmprestada());
+                bw.write(l.getId() + "," + l.getTitulo() + "," + l.getAutor() +  "," + l.getAno() +"," + l.getQuantidadeDisponivel() + "," + l.getQuantidadeEmprestada());
                 bw.newLine();
             }
         } catch (IOException e) {
@@ -26,9 +26,10 @@ public class Memoria {
                 int id = Integer.parseInt(dados[0]);
                 String titulo = dados[1];
                 String autor = dados[2];
-                int quantidadeDisp = Integer.parseInt(dados[3]);
-                int quantidadeEmp = Integer.parseInt(dados[4]);
-                livros.add(new Livro(titulo, id,  autor, quantidadeDisp, quantidadeEmp));
+                int ano = Integer.parseInt(dados[3]);
+                int quantidadeDisp = Integer.parseInt(dados[4]);
+                int quantidadeEmp = Integer.parseInt(dados[5]);
+                livros.add(new Livro(titulo, id, autor, ano, quantidadeDisp, quantidadeEmp));
             }
         } catch (Exception e) {
             System.out.println("Arquivo não encontrado, iniciando acervo como lista vazia");

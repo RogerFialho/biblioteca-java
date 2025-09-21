@@ -13,7 +13,7 @@ public class Main {
         bbtc.exibeLivrosEmprestados();
         System.out.println("Dados dos csv carregados");
         
-        Livro novoLivro1 = new Livro("Dom Quixote", 176, "Miguel de Cervantes", 3, 0);
+        Livro novoLivro1 = new Livro("Dom Quixote", 176,  "Miguel de Cervantes",1786, 3, 0);
         bbtc.adicionarLivro(novoLivro1);
         
         UsuarioComum novoUsuario1 = new UsuarioComum(7, "joaozinho", "jo.ao@email.com", "+5512345678");

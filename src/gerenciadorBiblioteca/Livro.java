@@ -3,13 +3,15 @@ public class Livro {
     private String titulo;
     private int id;
     private String autor;
+    private int ano;
     private int quantidadeDisponivel;
     private int quantidadeEmprestada;
 
-    public Livro(String titulo, int id, String autor, int quantidadeDisponivel, int quantidadeEmprestada){
+    public Livro(String titulo, int id, String autor, int ano, int quantidadeDisponivel, int quantidadeEmprestada){
         this.titulo = titulo;
         this.id = id;
         this.autor = autor;
+        this.ano = ano;
         this.quantidadeDisponivel = quantidadeDisponivel;
         this.quantidadeEmprestada = quantidadeEmprestada;
     }
@@ -23,6 +25,9 @@ public class Livro {
     public String getAutor (){
         return this.autor;
     }
+    public int getAno() {
+        return ano;
+    }
     public int getQuantidadeDisponivel(){
         return this.quantidadeDisponivel;
     }
@@ -31,6 +36,9 @@ public class Livro {
     }
     public void setTitulo(String titulo){
         this.titulo = titulo;
+    }
+    public void setAno(int ano) {
+        this.ano = ano;
     }
     public void setId(int id){
         this.id = id;

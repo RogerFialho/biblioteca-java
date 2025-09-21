@@ -1,5 +1,4 @@
 package gerenciadorBiblioteca;
-import java.util.Scanner;
 
 public class Usuario {
     private int id;
