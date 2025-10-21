@@ -4,6 +4,8 @@ import java.util.ArrayList;
 public class UsuarioComum extends Usuario {
     private ArrayList<Emprestimo> historico = new ArrayList<>(); 
 
+    public UsuarioComum(){}
+
     public UsuarioComum(int id, String nome, String email, String numero) {
         super(id, nome, email, numero); 
     }
