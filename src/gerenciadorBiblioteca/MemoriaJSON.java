@@ -2,12 +2,13 @@ package gerenciadorBiblioteca;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.io.IOException;
 import java.util.List;
 
-public class MemoriaJson{
-  private static final ObjectMapper = new ObjectMapper();
+public class MemoriaJSON{
+  private static final ObjectMapper MAPPER = new ObjectMapper();
   
   static {
     MAPPER.enable(SerializationFeature.INDENT_OUTPUT);
@@ -21,7 +22,7 @@ public class MemoriaJson{
       System.out.println("Salvo em JSON com sucesso");
       return true;
     } catch(IOException e){
-      System.err.println("Erro ao salvar livros em JSON em", nomearquivo, e);
+      System.out.println("Erro ao salvar livros em JSON");
       e.printStackTrace();
       return false;
     }
@@ -34,7 +35,7 @@ public class MemoriaJson{
       System.out.println("Salvo em JSON com sucesso");
       return true;
     } catch(IOException e){
-      System.err.println("Erro ao salvar usuários em JSON em", nomearquivo, e);
+      System.out.println("Erro ao salvar usuários em JSON");
       e.printStackTrace();
       return false;
     }
@@ -43,8 +44,8 @@ public class MemoriaJson{
   public static List<UsuarioComum> parseUsers(String jsonString){
     try {
       return MAPPER.readValue(jsonString, new TypeReference<List<Usuario>>() {});
-    } catch (IOException){
-      System.err.println("Erro ao ler JSON de usuários");
+    } catch (IOException e){
+      System.out.println("Erro ao ler JSON de usuários ");
       e.printStackTrace();
       return List.of();
     }
@@ -52,10 +53,10 @@ public class MemoriaJson{
 
   public static List<Livro> parseLivros(String jsonString){
     try {
-      return MAPPER.readValue(jsonString, new TypeReference<List<Livro>>);
+      return MAPPER.readValue(jsonString, new TypeReference<List<Livro>>(){});
     }
-    catch (IOException){
-      System.err.println("Erro ao carregar acervo");
+    catch (IOException e){
+      System.out.println("Erro ao carregar acervo");
       e.printStackTrace();
       return List.of();
     }
